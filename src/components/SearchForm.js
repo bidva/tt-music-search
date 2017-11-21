@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {updateTerm} from '../reducers/album'
 
-export default class SearchForm extends Component {
+
+class SearchForm extends Component {
 	constructor(props) {
   	super(props);
   	this.handleInputChange = this.handleInputChange.bind(this);
 	}
 	handleInputChange(evt) {
 		const val = evt.target.value
-		this.props.changeTerm(val)
+		this.props.updateTerm(val)
 	}
 	render() {
 		return (
@@ -20,3 +23,8 @@ export default class SearchForm extends Component {
 		);
 	}
 }
+
+export default connect(
+	(state)=>({searchTerm:state.searchTerm}),
+	{updateTerm}
+	)(SearchForm)

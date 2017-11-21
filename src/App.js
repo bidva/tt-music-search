@@ -13,15 +13,13 @@ class App extends Component {
           <h2 className="App-title">Welcome to React with redux for search music</h2>
         </div>
         <div className="Search-App">
-          <SearchForm 
-          searchTerm = {this.props.searchTerm}
-          changeTerm = {this.props.changeTerm}
-           />
-          <AlbumList albums={this.props.albums}/>
+          <SearchForm />
+          <AlbumList />
         </div>
       </div>
     );
   }
 }
 
-export default App;
+export default App
+

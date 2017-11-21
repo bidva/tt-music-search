@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 
 const AlbumItem = ({id,name})=>(
 		<li >
@@ -6,7 +7,7 @@ const AlbumItem = ({id,name})=>(
 	  </li>
 	)
 
-export default class SearchForm extends Component {
+ class AlbumList extends Component {
 	render() {
 		return (
 			 <div className="Album-List">
@@ -17,3 +18,5 @@ export default class SearchForm extends Component {
 		);
 	}
 }
+
+export default connect((state)=>({albums:state.albums}))(AlbumList)
