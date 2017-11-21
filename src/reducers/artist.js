@@ -1,22 +1,25 @@
+import {getArtists} from '../lib/spotifyServices'
 const initState= {
-	artists:[
-		{id:1, name:'Michael Jackson'},
-		{id:2, name:'Whitney Houston'},
-		{id:3, name:'Taylor Swift'}
-	],
+	artists:[],
 	searchTerm:''
 }
 const TERM_UPDATE = 'TERM_UPDATE'
-const ARRISTS_FETCH = 'ARRISTS_FETCH'
+const ARISTS_FETCH = 'ARISTS_FETCH'
 
 export const updateTerm = (val) => ({type:TERM_UPDATE,payload:val})
-export const artistsFetch = (val) => ({type:ARRISTS_FETCH,payload:val})
+export const artistsFetch = (val) => ({type:ARISTS_FETCH,payload:val})
+
+export const fetchArtists = (term) =>{
+	return (dispatch)=> {
+		getArtists(term).then(res=> dispatch(artistsFetch(res.data.artists.items)))
+	}
+}
 
 
 export default (state = initState, action) =>{
 	switch(action.type){
-		case ARRISTS_FETCH:
-			return {...state, artists: state.artists.concat(action.payload)}
+		case ARISTS_FETCH:
+			return {...state, artists: action.payload}
 		case TERM_UPDATE:
 			return {...state, searchTerm: action.payload}
 		default:
