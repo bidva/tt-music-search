@@ -16,15 +16,11 @@ class App extends Component {
           </form>
           <div className="Album-List">
             <ul>
-              <li>
-                <lable>album 01</lable>
-              </li>
-              <li>
-                <lable>album 02</lable>
-              </li>
-              <li>
-                <lable>album 03</lable>
-              </li>
+              {this.props.Albums.map(album=>(
+                  <li key={album.id}>
+                    <lable>{album.name}</lable>
+                  </li>
+                ))}
             </ul>
           </div>
         </div>
