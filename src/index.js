@@ -11,5 +11,5 @@ const state={
 		{id:3, name:'album 3'}
 	]
 }
-ReactDOM.render(<App Albums={state.albums}/>, document.getElementById('root'));
+ReactDOM.render(<App albums={state.albums}/>, document.getElementById('root'));
 registerServiceWorker();

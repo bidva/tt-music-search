@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchForm from './components/SearchForm'
+import AlbumList from './components/AlbumList'
 
 class App extends Component {
   render() {
@@ -11,18 +13,8 @@ class App extends Component {
           <h2 className="App-title">Welcome to React with redux</h2>
         </div>
         <div className="Search-App">
-          <form>
-            <input type="text" />
-          </form>
-          <div className="Album-List">
-            <ul>
-              {this.props.Albums.map(album=>(
-                  <li key={album.id}>
-                    <lable>{album.name}</lable>
-                  </li>
-                ))}
-            </ul>
-          </div>
+          <SearchForm />
+          <AlbumList albums={this.props.albums}/>
         </div>
       </div>
     );
