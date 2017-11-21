@@ -1,22 +1,22 @@
 const initState= {
-	albums:[
-		{id:1, name:'album 1'},
-		{id:2, name:'album 2'},
-		{id:3, name:'album 3'}
+	artists:[
+		{id:1, name:'Michael Jackson'},
+		{id:2, name:'Whitney Houston'},
+		{id:3, name:'Taylor Swift'}
 	],
 	searchTerm:''
 }
 const TERM_UPDATE = 'TERM_UPDATE'
-const ALBUM_FETCH = 'ALBUM_FETCH'
+const ARRISTS_FETCH = 'ARRISTS_FETCH'
 
 export const updateTerm = (val) => ({type:TERM_UPDATE,payload:val})
-export const albumFetch = (val) => ({type:ALBUM_FETCH,payload:val})
+export const artistsFetch = (val) => ({type:ARRISTS_FETCH,payload:val})
 
 
 export default (state = initState, action) =>{
 	switch(action.type){
-		case ALBUM_FETCH:
-			return {...state, albums: state.albums.concat(action.payload)}
+		case ARRISTS_FETCH:
+			return {...state, artists: state.artists.concat(action.payload)}
 		case TERM_UPDATE:
 			return {...state, searchTerm: action.payload}
 		default:

@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
-const AlbumItem = ({id,name})=>(
+const ArtistItem = ({id,name})=>(
 		<li >
 	    <span>{name}</span>
 	  </li>
 	)
 
- class AlbumList extends Component {
+ class ArtistList extends Component {
 	render() {
 		return (
 			 <div className="Album-List">
             <ul>
-              {this.props.albums.map(album=><AlbumItem key={album.id} {...album}/>)}
+              {this.props.artists.map(artist=><ArtistItem key={artist.id} {...artist}/>)}
             </ul>
        </div>
 		);
 	}
 }
 
-export default connect((state)=>({albums:state.albums}))(AlbumList)
+export default connect((state)=>({artists:state.artists}))(ArtistList)

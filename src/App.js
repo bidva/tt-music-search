@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import SearchForm from './components/SearchForm'
-import AlbumList from './components/AlbumList'
+import ArtistList from './components/ArtistList'
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
         </div>
         <div className="Search-App">
           <SearchForm />
-          <AlbumList />
+          <ArtistList />
         </div>
       </div>
     );
