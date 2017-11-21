@@ -36,6 +36,9 @@
 
 input {
   font-size: 20px;
+  border: none;
+  border-color: transparent;
+  border-bottom: solid 1px gray;
 }
 
 ul {
@@ -44,4 +47,17 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+.Artist-List-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+.Artist-List-container > div {
+  width: 50%;
+  padding: 10px;
+}
+.Artist-List-container > div:first-child {
+  margin-right: 20px;
 }

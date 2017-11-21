@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {updateTerm} from '../reducers/album'
+import {updateTerm} from '../reducers/artist'
 
 
 class SearchForm extends Component {
@@ -15,6 +15,9 @@ class SearchForm extends Component {
 	render() {
 		return (
 			 <form>
+			 <span>
+			 	Search Artists
+			 </span><br/>
             <input type="text"
             	onChange={this.handleInputChange}
             	value={this.props.searchTerm}
