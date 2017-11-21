@@ -18,7 +18,7 @@ class SearchForm extends Component {
 	}
 	render() {
 		return (
-			 <form>
+			 <form classname="Search-Form">
 			 <span>
 			 	Search Artists
 			 </span><br/>
