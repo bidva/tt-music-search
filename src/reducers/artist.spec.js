@@ -1,25 +1,25 @@
-import reducer from './album'
+import reducer from './artist'
 
-describe('Album Reducer',()=>{
+describe('Artist Reducer',()=>{
 	test('returns a state object',() =>{
 		const result = reducer(undefined,{type:'ANYTHING'})
 		expect(result).toBeDefined()
 	})
 
-	test('fetch slbums',()=>{
+	test('fetch artists',()=>{
 
 		const startState = {
-			albums:[
+			artists:[
 			]
 		}
 		const expectedState = {
-			albums:[
-				{id:1, name:'album 1'},
-				{id:2, name:'album 2'},
-				{id:3, name:'album 3'}
+			artists:[
+				{id:1, name:'Michael Jackson'},
+				{id:2, name:'Whitney Houston'},
+				{id:3, name:'Taylor Swift'}
 			]
 		}
-		const action = {type:'ALBUM_FETCH', payload: expectedState.albums}
+		const action = {type:'ARRISTS_FETCH', payload: expectedState.artists}
 		const result = reducer(startState, action: action)
 
 		expect(result).toEqual(expectedState)
