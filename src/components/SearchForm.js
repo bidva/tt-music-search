@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {updateTerm} from '../reducers/artist'
+import {fetchArtists} from '../reducers/artist'
 
 
 class SearchForm extends Component {
@@ -11,6 +12,9 @@ class SearchForm extends Component {
 	handleInputChange(evt) {
 		const val = evt.target.value
 		this.props.updateTerm(val)
+		if (val) {
+			this.props.fetchArtists(val)
+		}
 	}
 	render() {
 		return (
@@ -29,5 +33,5 @@ class SearchForm extends Component {
 
 export default connect(
 	(state)=>({searchTerm:state.searchTerm}),
-	{updateTerm}
+	{updateTerm,fetchArtists}
 	)(SearchForm)

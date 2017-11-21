@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const TOKEN = 'BQDxhB07utWOPttQ9k7kBUkMrpPCqFPvp0wym2N5lT-pFWz7S6VGs-KIOxjVf3Vcsk26ZDKY0j2O-GQ5dE6YqvwPCY8BllsAI1dBQUtgFqou_-GTen_6ZCv1s9X1j6jyRgDADF1AMdbVFFQxBL5dBxRYHiTh1KDZtZlXjiVLvx29c1qJMOwBTSKCoI4xO192SFEP1OeSPZ30YESO-rdDwiFc5LVRmWowKK9kvi3NpI3MLjkZrkFpLbLzHvFk2IXfumO_du2HjOUNsTlW'
+export const TOKEN = 'BQBaNcJ6GJok3U7wnXFqYUpuC_VvrQG3iXkEseLE3F_nKCxYYqYvowY89eFzz3x5_quKCz8M3q4NwXURrJAx8AgtNx0kydtP8jg6HMvhlvccysTNchXlJePjMUcSyPRSPnkhW1Hkp6SewsiwafLUWJWX50scPoNTm7eXptez5A7Kn9KAKSVVmpvEdSx7TxWca-u5KhAIwiADZsXWf6ScUq_JTk4dAISo2RW2tUoV1g50rxwX4cFmbjRA8yv339RjM1l1L1u9uOYoSHr_'
 
 export const headersSetting = { 
 	headers: { Authorization: `Bearer ${TOKEN}` }
