@@ -42,13 +42,14 @@ input {
   border: none;
   border-color: transparent;
   border-bottom: solid 1px gray;
+  margin-bottom: 2em;
 }
 
 ul {
   padding: 0px;
 }
 
-li {
+ul li {
   list-style-type: none;
 }
 
@@ -67,4 +68,14 @@ li {
 
 .Artist-logo{
   width: 200px;
+}
+.Album-Detail-Container{
+  margin-bottom: 4em;  
+}
+.dv-star-rating{
+  float: left;
+  margin-left: 2px;
+}
+.Album-Detail-Container ol{
+  text-align: left;
 }

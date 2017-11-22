@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {fetchAlbums} from '../reducers/artist'
+import AlbumList from './AlbumList'
 
 class ArtistAlbumList extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentWillMount(props) {
+    this.props.fetchAlbums(this.props.match.params.id)
   }
 
   render() {
     return (
       <div>
-        {this.props.match.params.id}
+        <span>
+          Albums
+        </span><br/>
+        <input type="text"
+          disabled
+          value={this.props.match.params.name}
+         /><br/>
+         <AlbumList/>
       </div>
     );
   };
 }
 
 export default connect(
-	(state)=>({currentArtist:state.currentArtist})
-	)(ArtistAlbumList)
+  (state)=>({artistAlbums:state.artistAlbums}),
+  {fetchAlbums}
+  )(ArtistAlbumList)
