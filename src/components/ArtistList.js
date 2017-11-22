@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-
-import {GridList, GridTile} from 'material-ui/GridList'
+import {GridList} from 'material-ui/GridList'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
-
-const ArtistItem = ({id,name,images})=>(
-			<GridTile
-          key={id}
-          title={name}
-        >
-          <img src={images[3]?images[2].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} />
-        </GridTile>
-	)
-
+import ArtistItem from './ArtistItem'
 
 const styles = {
 	  root: {
@@ -27,7 +17,7 @@ const styles = {
 	    height: 450,
 	    overflowY: 'auto',
 	  },
-	};
+	}
 
  class ArtistList extends Component {
 	render() {
