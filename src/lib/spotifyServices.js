@@ -1,7 +1,7 @@
-import * as SpotifyWebApi from 'spotify-web-api-js';
-const spotifyApi = new SpotifyWebApi();
+import SpotifyWebApi from 'spotify-web-api-js';
+var spotifyApi = new SpotifyWebApi({});
 
-export const TOKEN = 'BQAebiZhKs0n3rrkIDHuWvV4VvvgyDi5dJvVF0eTYISLVVD6_kzsmSLRlRQUWvNd5TZCrEw4L53iyV55lzYPUIXdui-kB3KwuQF0T1LOQ7ho2cf-WgmOKVrYW56xI-r6CBrimLoT7snizwF01yZjziboaFa19GcrJWIqBEYo4r-FnTYK-Lj_geua7YZPpVPf8KnBQgQ0lrjIS4rzplMahUvjuMiRJ5P4dLs9HXvQm3mX7G7uVABP3vCWzbvrk9-8i4hb-loY-wVkyYYu'
+export const TOKEN = 'BQCl186MLxTe_4se-a7DOBEoYWfoqkRJEVmDzVzoXtV31_NFJIhh1stpophR95-PoDIibQ-hEYBrMgL-VTVdKKJI2U2vrTeM_k9wYU8R0_mHr7tVIS5CTLO_lz6ACcyWzSLO0sGpEVD8OFaZmdZ70nNbq8RnsH3lRCWdNqFRxC3_6W0umRNfk8MOJLCpakfiVQDhlmEjxOFmiiC_6PXfdTByOwWft_uS3Bf-MDoegluvHn3nNE4oUizsr3HgrvLXdEE9SpGkIZgky2OT'
 spotifyApi.setAccessToken(TOKEN)
 
 export const getArtists = (term) =>{
