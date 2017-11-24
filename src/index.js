@@ -5,12 +5,12 @@ import Thunk from 'redux-thunk'
 import { createStore, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
-import reducer from './reducers'
+import rootReducer from './reducers'
 import Home from './containers/Home'
 import Albums from './containers/Albums'
 import Header from './components/Header/Header'
 
-const store = createStore(reducer, applyMiddleware(promiseMiddleware, Thunk))
+const store = createStore(rootReducer, applyMiddleware(promiseMiddleware, Thunk))
 
 render(
   <Provider store={store}>

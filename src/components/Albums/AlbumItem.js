@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
 import {GridTile} from 'material-ui/GridList'
 
 const styles = {
@@ -18,22 +17,14 @@ const styles = {
   }
 }
 
-class ArtistItem extends Component {
-  constructor(props) {
-    super(props);
-    this.handelClick=this.handelClick.bind(this)
-  }
-  handelClick(history){
-    history.push(`/artists/${this.props.artist.id}/albums`)
-  }
+class AlbumItem extends Component {
   render() {
-    const {id, name, images} = this.props.artist
-    const {history} = this.props
+    debugger
+    const {id, name, images} = this.props.album
     return (
         <GridTile 
           key={id} 
           title={name}
-          onClick={()=>this.handelClick(history)}
           >
           <img style={styles.gridImage}
             src={images[1]?images[1].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
@@ -43,4 +34,4 @@ class ArtistItem extends Component {
     )
   }
 }
-export default withRouter(ArtistItem)
+export default AlbumItem

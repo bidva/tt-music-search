@@ -1,11 +1,11 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as actions from '../actions'
+import {updateTerm, artistsFetch} from '../actions/index'
 import SearchForm from '../components/Home/SearchForm'
 import ArtistList from '../components/Home/ArtistList'
 
-const Home = ({term, artists, actions }) =>console.log(artists)||(
+const Home = ({term, artists, actions }) =>(
   <div>
     <SearchForm 
       updateTerm={actions.updateTerm} 
@@ -20,16 +20,13 @@ const Home = ({term, artists, actions }) =>console.log(artists)||(
   </div>
 )
 
-Home.propTypes = {
-}
-
 const mapStateToProps = state => ({
   artists:state.musticSearch.artists,
   term: state.musticSearch.term
 })
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch)
+  actions: bindActionCreators({updateTerm, artistsFetch}, dispatch)
 })
 
 export default connect(
