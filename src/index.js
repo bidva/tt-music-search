@@ -10,6 +10,9 @@ import Home from './containers/Home'
 import Albums from './containers/Albums'
 import Header from './components/Header/Header'
 import Token from './components/Token/Token'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
 const store = createStore(rootReducer, applyMiddleware(promiseMiddleware, Thunk))
 
@@ -17,12 +20,16 @@ render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+      <div>
       <Header/>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/artists/:id/albums" component={Albums}/>
         <Route path="/token" component={Token}/>
       </Switch>
+      </div>
+      </MuiThemeProvider>
       </div>
     </BrowserRouter>
   </Provider>, 

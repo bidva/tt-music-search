@@ -14,7 +14,6 @@ const styles = {
   gridTile:{
     height:'auto',
     borderRadius:10,
-    border:'solid 2px black'
   }
 }
 
@@ -28,17 +27,19 @@ class AlbumItem extends Component {
     if (!album.tracks)
       return null
     return(
-      <div className="Album-Detail-Container">
-        <Stars
-        name={'stars'+album.id}
-        editing={false}
-        starCount={5}
-        value={this.getIntValueForStars(album.popularity)}
-        />
-        <span>
-          {new Date(album.release_date).getFullYear()}
-        </span>
-        <ol>
+      <div>
+        <div className="Album-Detail-Container">
+          <Stars
+          name={'stars'+album.id}
+          editing={false}
+          starCount={5}
+          value={this.getIntValueForStars(album.popularity)}
+          />
+          <span>
+            {new Date(album.release_date).getFullYear()}
+          </span>
+        </div>
+        <ol className="track-list">
           {
             album.tracks.items.map((track)=>
             <li key={track.id}>{track.name}</li>)
@@ -50,13 +51,13 @@ class AlbumItem extends Component {
   render() {
     const {handleClick , isSelected, album} = this.props
     const {id, name, images} = album
-    debugger
     return (
         <GridTile 
           key={id} 
           title={name}
           onClick={handleClick.bind(this,id)} 
           style={styles.gridTile}
+          className="gridTile"
           >
           <img
             src={images[1]?images[1].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 

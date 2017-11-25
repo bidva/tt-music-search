@@ -6,8 +6,6 @@ import _ from 'lodash'
 const styles = {
   gridTile:{
     height:'auto',
-    borderRadius:10,
-    border:'solid 2px black'
   }
 }
 
@@ -29,6 +27,7 @@ class ArtistItem extends Component {
           title={name}
           onClick={()=>this.handelClick(history)}
           style={styles.gridTile}
+          className="gridTile"
           >
           <img
             className="thumb"

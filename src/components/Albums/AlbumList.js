@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {GridList} from 'material-ui/GridList'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import AlbumItem from './AlbumItem'
+import './AlbumList.css'
 
 const styles = {
   root: {
@@ -37,7 +35,6 @@ class AlbumList extends Component {
   render() {
     const {selectedTile} = this.state
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div style={styles.root}>
           <GridList cellHeight={'auto'} style={styles.gridList}>
             {this.props.albumList.map(album=>
@@ -49,7 +46,6 @@ class AlbumList extends Component {
               />)}
           </GridList>
         </div>
-      </MuiThemeProvider>
     );
   }
 }

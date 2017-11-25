@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import {GridList} from 'material-ui/GridList'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import ArtistItem from './ArtistItem'
 import './ArtistList.css'
 
@@ -22,7 +19,6 @@ const styles = {
 class ArtistList extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div style={styles.root}>
           <GridList cellHeight={'auto'} style={styles.gridList}>
             {this.props.artists.map(artist=>
@@ -33,7 +29,6 @@ class ArtistList extends Component {
               />)}
           </GridList>
         </div>
-      </MuiThemeProvider>
     );
   }
 }

@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import TextField from 'material-ui/TextField'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 
 const styles = {
   floatingLabelStyle: {
@@ -42,10 +39,9 @@ class SearchForm extends Component {
   }
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <form className="Search-Form">
           <TextField
-            floatingLabelText="Search for artist (search will start 3 seconds after stop typing)"
+            floatingLabelText="Start typing... (search triggers 3 seconds after stop typing)"
             floatingLabelStyle={styles.floatingLabelStyle}
             floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
             fullWidth={true}
@@ -54,7 +50,6 @@ class SearchForm extends Component {
             value={this.props.searchTerm}
           />
         </form>
-      </MuiThemeProvider>
     );
   }
 }

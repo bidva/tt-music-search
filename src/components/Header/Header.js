@@ -3,7 +3,7 @@ import { NavLink  } from 'react-router-dom'
 import './Header.css'
 
 
-const Header = () => (
+const Header = () =>(
   <header>
     <nav>
       <ul>

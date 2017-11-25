@@ -2,5 +2,6 @@
   margin-top: 1em;
   display:block;
   word-wrap:break-word;
-  border: solid 1px red;
+  border: solid 2px rgb(0, 134, 151);
+  padding: 10px;
 }

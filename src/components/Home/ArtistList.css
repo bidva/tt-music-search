@@ -5,3 +5,20 @@
   top:0!important;
   left:0!important;
 }
+
+.gridTile:hover{
+  border:solid 2px rgb(0, 134, 151);
+  box-shadow: 1px 1px 15px #888888;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
+  -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+}
+.gridTile{
+  height:auto;
+  -webkit-border-radius: 10px;
+  border-radius:10px;
+  border:solid 2px black;
+}
