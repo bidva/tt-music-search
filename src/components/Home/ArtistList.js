@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {GridList} from 'material-ui/GridList'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import ArtistItem from './ArtistItem'
+import './ArtistList.css'
 
 const styles = {
   root: {
@@ -15,15 +16,15 @@ const styles = {
     width: 500,
     height: 'auto',
     overflowY: 'auto',
-  },
+  }
 }
 
 class ArtistList extends Component {
   render() {
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div style={styles.root}>
-          <GridList cellHeight={180} style={styles.gridList}>
+          <GridList cellHeight={'auto'} style={styles.gridList}>
             {this.props.artists.map(artist=>
               <ArtistItem 
               key={artist.id} 

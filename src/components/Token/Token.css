@@ -1,0 +1,6 @@
+.access-token{
+  margin-top: 1em;
+  display:block;
+  word-wrap:break-word;
+  border: solid 1px red;
+}

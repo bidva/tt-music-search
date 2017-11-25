@@ -9,6 +9,7 @@ import rootReducer from './reducers'
 import Home from './containers/Home'
 import Albums from './containers/Albums'
 import Header from './components/Header/Header'
+import Token from './components/Token/Token'
 
 const store = createStore(rootReducer, applyMiddleware(promiseMiddleware, Thunk))
 
@@ -20,6 +21,7 @@ render(
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/artists/:id/albums" component={Albums}/>
+        <Route path="/token" component={Token}/>
       </Switch>
       </div>
     </BrowserRouter>

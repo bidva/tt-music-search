@@ -19,5 +19,5 @@ export const albumsFetch = val => ({
 })
 export const albumFetch = val => ({
   type:types.ALBUM_FETCH,
-  payload:val
+  payload:api.getAlbum(val)
 })

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {GridList} from 'material-ui/GridList'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
-import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
 import AlbumItem from './AlbumItem'
 
 const styles = {
@@ -15,21 +15,37 @@ const styles = {
     width: 500,
     height: 'auto',
     overflowY: 'auto',
-  },
+  }
 }
 
 class AlbumList extends Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      selectedTile: ''
+    }
   }
+
+  handleClick(id){
+    const {albumFetch} = this.props
+    albumFetch(id).then(
+      this.setState({selectedTile:id})
+    )
+  }
+
   render() {
+    const {selectedTile} = this.state
     return (
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div style={styles.root}>
-          <GridList cellHeight={180} style={styles.gridList}>
+          <GridList cellHeight={'auto'} style={styles.gridList}>
             {this.props.albumList.map(album=>
               <AlbumItem 
               key={album.id} 
-              album={album} 
+              album={album}
+              handleClick={this.handleClick}
+              isSelected={album.id===selectedTile}
               />)}
           </GridList>
         </div>

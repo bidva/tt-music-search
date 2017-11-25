@@ -1,20 +1,13 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import {GridTile} from 'material-ui/GridList'
+import _ from 'lodash'
 
 const styles = {
-    gridImage: {
-    height: 'auto',
-    transform: 'none',
-    position: 'relative',
-    left: 0,
-    top: 0
-  },
   gridTile:{
-    boxSizing: 'border-box',
-    padding: '2px',
-    width: '50%',
-    height: 'auto'
+    height:'auto',
+    borderRadius:10,
+    border:'solid 2px black'
   }
 }
 
@@ -29,14 +22,17 @@ class ArtistItem extends Component {
   render() {
     const {id, name, images} = this.props.artist
     const {history} = this.props
+    const thumb = _.find(images,{'width':640})
     return (
         <GridTile 
           key={id} 
           title={name}
           onClick={()=>this.handelClick(history)}
+          style={styles.gridTile}
           >
-          <img style={styles.gridImage}
-            src={images[1]?images[1].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
+          <img
+            className="thumb"
+            src={thumb?thumb.url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
             alt="Artist thumb"
           />
         </GridTile>
