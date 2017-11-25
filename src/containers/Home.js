@@ -4,9 +4,11 @@ import { connect } from 'react-redux'
 import {updateTerm, artistsFetch} from '../actions/index'
 import SearchForm from '../components/Home/SearchForm'
 import ArtistList from '../components/Home/ArtistList'
+import Message from '../components/Message/Message'
 
-const Home = ({term, artists, actions }) =>(
+const Home = ({term, message, artists, actions }) =>(
   <div>
+    {(message&&message!=="")?<Message message={message}/>:null}
     <SearchForm 
       updateTerm={actions.updateTerm} 
       artistsFetch={actions.artistsFetch}
@@ -20,9 +22,10 @@ const Home = ({term, artists, actions }) =>(
   </div>
 )
 
-const mapStateToProps = state => ({
+const mapStateToProps = state =>({
   artists:state.musticSearch.artists,
-  term: state.musticSearch.term
+  term: state.musticSearch.term,
+  message: state.musticSearch.message
 })
 
 const mapDispatchToProps = dispatch => ({

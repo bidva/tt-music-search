@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {GridList} from 'material-ui/GridList'
 import ArtistItem from './ArtistItem'
 import './ArtistList.css'

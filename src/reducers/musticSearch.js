@@ -3,10 +3,16 @@ import dotProp from 'dot-prop-immutable'
 
 const initialState={
   artists:[],
-  term:''
+  term:'',
+  message:''
 }
 
 export default function musticSearch(state = initialState, action){
+  if (action.error) {
+    let mes=JSON.parse(action.payload.responseText).error.message
+    return dotProp.set(state, 'message', mes)
+  }
+  dotProp.set(state, 'message', '')
   switch (action.type) {
     case types.ARTISTS_FETCH:
       let artists=action.payload.artists.items

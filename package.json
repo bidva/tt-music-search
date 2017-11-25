@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "classnames": "^2.2.5",
     "dot-prop-immutable": "^1.4.0",
     "material-ui": "^0.19.4",
     "query-string": "^5.0.1",

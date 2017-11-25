@@ -10,7 +10,7 @@ const styles = {
   }
 };
 
-const WAIT_INTERVAL = 3000;
+const WAIT_INTERVAL = 1000;
 const ENTER_KEY = 13;
 
 class SearchForm extends Component {
@@ -41,7 +41,7 @@ class SearchForm extends Component {
     return (
         <form className="Search-Form">
           <TextField
-            floatingLabelText="Start typing... (search triggers 3 seconds after stop typing)"
+            floatingLabelText="Start typing... (Searching process triggers second after stop typing)"
             floatingLabelStyle={styles.floatingLabelStyle}
             floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
             fullWidth={true}

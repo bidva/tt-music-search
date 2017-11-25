@@ -15,10 +15,15 @@
   -webkit-box-shadow: rgba(0,0,0,0.8) 0px 0 10px;
   -moz-box-shadow: rgba(0,0,0,0.8) 0 0 10px;
   box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  opacity: 1;
+}
+.gridTile.active{
+  opacity: 1;
 }
 .gridTile{
   height:auto;
   -webkit-border-radius: 10px;
   border-radius:10px;
-  border:solid 2px black;
+  border:solid 2px gray;
+  opacity: 0.7;
 }

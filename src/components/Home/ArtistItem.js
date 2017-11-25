@@ -31,7 +31,7 @@ class ArtistItem extends Component {
           >
           <img
             className="thumb"
-            src={thumb?thumb.url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
+            src={thumb?thumb.url:'https://cdn.pixabay.com/photo/2017/06/14/22/07/black-2403543_960_720.png'} 
             alt="Artist thumb"
           />
         </GridTile>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {GridTile} from 'material-ui/GridList'
 import Stars from 'react-star-rating-component'
+import classNames from 'classnames'
 
 const styles = {
   gridImage: {
@@ -57,7 +58,7 @@ class AlbumItem extends Component {
           title={name}
           onClick={handleClick.bind(this,id)} 
           style={styles.gridTile}
-          className="gridTile"
+          className={classNames('gridTile',{active:isSelected})}
           >
           <img
             src={images[1]?images[1].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
