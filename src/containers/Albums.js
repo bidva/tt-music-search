@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import {artistFetch, albumsFetch, albumFetch} from '../actions/index'
 import AlbumsHeader from '../components/Albums/AlbumsHeader'
 import AlbumList from '../components/Albums/AlbumList'
+import singerThumb from '../components/Shared/images/singer-thumb.png'
+
 
 class Album extends Component {
   componentWillMount() {
@@ -14,9 +16,15 @@ class Album extends Component {
   render(){
     const {currentArtist, albumList} = this.props
     const {albumFetch} = this.props.actions
+    let url = (currentArtist&&currentArtist.images&&currentArtist.images[0])?
+      currentArtist.images[0].url:
+      singerThumb
     return(
       <div>
-        <AlbumsHeader currentArtist={currentArtist}/>
+        <AlbumsHeader 
+        url={url}
+        name={currentArtist.name}
+        />
         <hr/>
         <AlbumList 
           albumList={albumList}

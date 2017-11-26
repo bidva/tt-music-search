@@ -8,7 +8,7 @@ const Header = () =>(
     <nav>
       <ul>
         <li><NavLink exact to='/' >Home</NavLink></li>
-        <li><a  href='https://accounts.spotify.com/authorize?client_id=06d4043882254b7981cf26736d82fe30&redirect_uri=http://localhost:3000/token/&scope=user-read-private%20user-read-email&response_type=token&state=123'>get token</a></li>
+        <li><a href={process.env.REACT_APP_GET_TOKEN_URL}>get token</a></li>
       </ul>
     </nav>
   </header> 

@@ -2,11 +2,14 @@ import React from 'react'
 import Avatar from 'material-ui/Avatar'
 import './AlbumsHeader.css'
 
-const AlbumsHeader = ({ currentArtist }) =>(
+const AlbumsHeader = ({ url , name }) =>(
   <div className="album-header">
-    {currentArtist.images?<Avatar src={currentArtist.images[0].url} />:null}
+    <Avatar
+    backgroundColor='white' 
+    src={url} 
+    />
     <span>
-        {currentArtist.name}
+        {name}
     </span>
   </div>
 )

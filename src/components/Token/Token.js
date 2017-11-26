@@ -10,8 +10,7 @@ const Token = (props) =>(
       <span className="access-token">
         {queryString.parse(props.location.hash).access_token}
       </span>  
-    </div>
-    
+    </div> 
 )
 
 export default Token

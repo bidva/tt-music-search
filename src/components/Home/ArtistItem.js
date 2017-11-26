@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import {GridTile} from 'material-ui/GridList'
 import _ from 'lodash'
+import singerThumb from '../Shared/images/singer-thumb.png'
 
 const styles = {
   gridTile:{
@@ -20,7 +21,10 @@ class ArtistItem extends Component {
   render() {
     const {id, name, images} = this.props.artist
     const {history} = this.props
-    const thumb = _.find(images,{'width':640})
+    let thumb = _.find(images,{'width':640})
+    if (!thumb) {
+      thumb = images[0]
+    }
     return (
         <GridTile 
           key={id} 
@@ -33,7 +37,10 @@ class ArtistItem extends Component {
           >
           <img
             className="thumb"
-            src={thumb?thumb.url:'https://icon-icons.com/icons2/931/PNG/512/executive_person_icon-icons.com_72414.png'} 
+            src={thumb?
+              thumb.url:
+              singerThumb
+            } 
             alt="Artist thumb"
           />
         </GridTile>

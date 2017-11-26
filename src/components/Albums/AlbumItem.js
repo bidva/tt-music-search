@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {GridTile} from 'material-ui/GridList'
 import Stars from 'react-star-rating-component'
 import classNames from 'classnames'
+import trackThumb from '../Shared/images/singer-thumb.png'
 
 const styles = {
   gridImage: {
@@ -63,7 +64,7 @@ class AlbumItem extends Component {
           className={classNames('gridTile',{active:isSelected})}
           >
           <img
-            src={images[1]?images[1].url:'http://www.pngmart.com/files/5/Anonymous-Transparent-Background.png'} 
+            src={images[1]?images[1].url:trackThumb} 
             alt="Artist thumb"
             style={styles.gridImage}
           />
