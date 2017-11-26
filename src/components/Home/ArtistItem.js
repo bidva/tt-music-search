@@ -27,11 +27,13 @@ class ArtistItem extends Component {
           title={name}
           onClick={()=>this.handelClick(history)}
           style={styles.gridTile}
+          titlePosition="top"
+          titleBackground="linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0.6) 90%,rgba(0,0,0,0.1) 100%)"
           className="gridTile"
           >
           <img
             className="thumb"
-            src={thumb?thumb.url:'https://cdn.pixabay.com/photo/2017/06/14/22/07/black-2403543_960_720.png'} 
+            src={thumb?thumb.url:'https://icon-icons.com/icons2/931/PNG/512/executive_person_icon-icons.com_72414.png'} 
             alt="Artist thumb"
           />
         </GridTile>
