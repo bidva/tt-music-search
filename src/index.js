@@ -4,7 +4,8 @@ import promiseMiddleware from 'redux-promise'
 import Thunk from 'redux-thunk'
 import { createStore, applyMiddleware} from 'redux'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import { Router, Route, Switch} from 'react-router-dom'
+import history from './lib/history'
 import rootReducer from './reducers'
 import Home from './containers/Home'
 import Albums from './containers/Albums'
@@ -18,7 +19,7 @@ const store = createStore(rootReducer, applyMiddleware(promiseMiddleware, Thunk)
 
 render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router  history={history}>
       <div>
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
       <div>
@@ -31,6 +32,6 @@ render(
       </div>
       </MuiThemeProvider>
       </div>
-    </BrowserRouter>
+    </Router>
   </Provider>, 
 document.getElementById('root'));
