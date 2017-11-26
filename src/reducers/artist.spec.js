@@ -21,15 +21,73 @@ describe('artist reducer', () => {
         },{
         type:types.ARTIST_FETCH,
         payload:{
-          a:1
+          id:1
         }
       })
     ).toEqual(
       {
         currentArtist:{
-          a:1
+          id:1
         },
         albumList:[]
+      }
+    )
+  })
+
+  it('should handle ALBUMS_FETCH', () => {
+    expect(
+      artist({
+          currentArtist:{},
+          albumList:[]
+        },{
+        type:types.ALBUMS_FETCH,
+        payload:{items:[{
+          id:1
+        },{
+          id:2
+        }        
+        ]}
+      })
+    ).toEqual(
+      {
+        currentArtist:{},
+        albumList:[{
+          id:1
+        },{
+          id:2
+        }        
+        ]
+      }
+    )
+  })
+
+  it('should handle ALBUM_FETCH', () => {
+    expect(
+      artist({
+          currentArtist:{},
+          albumList:[{
+            id:1
+          }]
+        },{
+        type:types.ALBUM_FETCH,
+        payload:{
+          id:1,
+          images:[
+            {id:1},
+            {id:2}
+          ]
+        }
+      })
+    ).toEqual(
+      {
+        currentArtist:{},
+        albumList:[{
+          id:1,
+          images:[
+            {id:1},
+            {id:2}
+          ]
+        }]
       }
     )
   })
