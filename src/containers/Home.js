@@ -23,9 +23,9 @@ const Home = ({term, message, artists, actions }) =>(
 )
 
 const mapStateToProps = state =>({
-  artists:state.musticSearch.artists,
-  term: state.musticSearch.term,
-  message: state.musticSearch.message
+  artists:state.musicSearch.artists,
+  term: state.musicSearch.term,
+  message: state.musicSearch.message
 })
 
 const mapDispatchToProps = dispatch => ({

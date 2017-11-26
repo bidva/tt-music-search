@@ -1,9 +1,9 @@
 import {combineReducers } from 'redux'
-import musticSearch from './musticSearch'
+import musicSearch from './musicSearch'
 import artist from './artist'
 
 const rootReducer = combineReducers({
-  musticSearch,
+  musicSearch,
   artist
 })
 
