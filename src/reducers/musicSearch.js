@@ -9,7 +9,6 @@ const initialState={
 
 export default function musicSearch(state = initialState, action){
   if (action.error) {
-    debugger
     let mes=JSON.parse(action.payload.responseText).error.message
     return dotProp.set(state, 'message', mes)
   }
