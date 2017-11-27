@@ -1,5 +1,6 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './public/index.html',
   filename: 'index.html',
@@ -8,10 +9,11 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 const path = require('path');
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve('dist'),
-    filename: 'index_bundle.js'
+      path: path.resolve(__dirname, 'build'),
+      filename: "js/bundle.js",
+      publicPath: "/"
   },
   module: {
     loaders: [
@@ -20,7 +22,7 @@ module.exports = {
       { test: /\.css$/, use: [ 'style-loader', 'css-loader' ]},
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: ['file-loader?context=src/images&name=images/[path][name].[ext]', {
+        loaders: ['file-loader?context=src/components/Shared/images/[path][name].[ext]', {
           loader: 'image-webpack-loader',
           query: {
             mozjpeg: {
@@ -37,9 +39,7 @@ module.exports = {
               speed: 3,
             },
           },
-        }],
-        exclude: /node_modules/,
-        include: __dirname,
+        }]
       }
     ]
   },
@@ -48,5 +48,10 @@ module.exports = {
     contentBase: './',
     port: 3000
   },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [HtmlWebpackPluginConfig,
+  new Dotenv({
+      path: './.env',
+      safe: false 
+    })
+  ]
 }

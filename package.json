@@ -6,6 +6,7 @@
     "axios": "^0.17.1",
     "classnames": "^2.2.5",
     "dot-prop-immutable": "^1.4.0",
+    "dotenv-webpack": "^1.5.4",
     "material-ui": "^0.19.4",
     "query-string": "^5.0.1",
     "react": "^16.1.1",
@@ -21,7 +22,7 @@
     "spotify-web-api-node": "^2.5.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "webpack-dev-server",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test"
