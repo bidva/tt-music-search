@@ -8,7 +8,7 @@ const Header = () =>(
     <nav>
       <ul>
         <li><NavLink exact to='/' >Home</NavLink></li>
-        <li><a href={process.env.REACT_APP_GET_TOKEN_URL}>get token</a></li>
+        <li><a href={process.env.REACT_APP_GET_TOKEN_URL}>Get Token</a></li>
       </ul>
     </nav>
   </header> 
