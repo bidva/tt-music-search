@@ -5,7 +5,7 @@ export const TOKEN = process.env.REACT_APP_TOKEN
 spotifyApi.setAccessToken(TOKEN)
 
 export const getArtists = (term) =>{
-	return spotifyApi.searchArtists(term)
+  return spotifyApi.searchArtists(term)
 }
 
 export const getArtist = (artistId) =>{
@@ -13,9 +13,9 @@ export const getArtist = (artistId) =>{
 }
 
 export const getAlbums = (artistId) =>{
-	return spotifyApi.getArtistAlbums(artistId)
+  return spotifyApi.getArtistAlbums(artistId)
 }
 
 export const getAlbum = (albumId) =>{
-	return spotifyApi.getAlbum(albumId)
+  return spotifyApi.getAlbum(albumId)
 }
