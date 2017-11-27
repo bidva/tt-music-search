@@ -7,7 +7,7 @@ Application to allow you to search from spotify.
 
 ## Running
 
-Follow those steps:
+Follow these steps:
  - `cd tt-music-search`
  - `yarn install`
  - `yarn start`
@@ -16,5 +16,10 @@ Follow those steps:
  - `take the token and put it in .env file`
  - `restart the app`
  - open http://localhost:3000
+
+## Testing
+Follow these steps:
+- `cd tt-music-search`
+- `yarn test`
 
 
